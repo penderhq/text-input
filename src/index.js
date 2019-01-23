@@ -1,9 +1,39 @@
-import React, {Component} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+import {css, cx} from 'emotion'
 
-export default class extends Component {
-  render() {
-    return <div>
-      <h2>Welcome to React components</h2>
-    </div>
-  }
+export default class TextInput extends React.Component {
+
+    static propTypes = {
+        id: PropTypes.string.isRequired,
+        className: PropTypes.string,
+        value: PropTypes.number,
+        onChange: PropTypes.func.isRequired
+    }
+
+    render() {
+
+        return (
+            <input
+                type="text"
+                className={cx(
+                    this.props.className,
+                    css`
+                        background: none;
+                        border: none;
+                    `
+                )}
+                value={this.props.value || ''}
+                onChange={this.handleChange}
+            />
+        )
+    }
+
+    handleChange = (e) => {
+
+        this.props.onChange({
+            id: this.props.id,
+            value: e.target.value === '' ? null : e.target.value
+        })
+    }
 }

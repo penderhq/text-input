@@ -1,7 +1,7 @@
 {
-  "name": "text-input",
-  "version": "1.0.0",
-  "description": "text-input React component",
+  "name": "@cmds/text-input",
+  "version": "0.1.0",
+  "description": "Used for entering a single line of text.",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
@@ -11,6 +11,7 @@
     "umd"
   ],
   "scripts": {
+    "deploy": "cd demo/dist && surge --domain cmds-text-input.surge.sh",
     "build": "nwb build-react-component",
     "clean": "nwb clean-module && nwb clean-demo",
     "prepublishOnly": "npm run build",
