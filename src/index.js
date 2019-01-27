@@ -17,11 +17,11 @@ export default class TextInput extends React.Component {
             <input
                 type="text"
                 className={cx(
-                    this.props.className,
                     css`
                         background: none;
                         border: none;
-                    `
+                    `,
+                    this.props.className
                 )}
                 value={this.props.value || ''}
                 onChange={this.handleChange}
