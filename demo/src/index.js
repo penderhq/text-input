@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {render} from 'react-dom'
-import {css} from 'emotion'
 import {injectGlobal} from 'emotion'
+import {Canvas, Heading, Paragraph, Box} from '@cmds/demo-utils'
 
 injectGlobal`
     * {
@@ -9,27 +9,24 @@ injectGlobal`
     }
     body {
         font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+        margin: 0;
     }
 `
 
 import TextInput from '../../src'
 
-class Example1 extends Component {
+class Demo extends Component {
 
     state = {
         value: 'Luke Skywalker'
     }
 
     render() {
-        return <div>
-            <h2>
+        return <Canvas>
+            <Heading>
                 Default
-            </h2>
-            <div
-                className={css`
-                    width: 200px;
-                `}
-            >
+            </Heading>
+            <Box>
                 <TextInput
                     value={this.state.value}
                     onChange={({value}) => {
@@ -39,27 +36,16 @@ class Example1 extends Component {
                         })
                     }}
                 />
-            </div>
-            <h3>
+            </Box>
+            <Paragraph>
                 State
-            </h3>
-            <pre>
-                {JSON.stringify(this.state, null, 2)}
-            </pre>
-        </div>
-    }
-}
-
-class Demo extends React.Component {
-
-    render() {
-
-        return (
-            <div>
-                <h1>TextInput Demo</h1>
-                <Example1/>
-            </div>
-        )
+            </Paragraph>
+            <Box>
+                <pre>
+                    {JSON.stringify(this.state, null, 2)}
+                </pre>
+            </Box>
+        </Canvas>
     }
 }
 

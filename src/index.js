@@ -20,7 +20,9 @@ export default class TextInput extends React.Component {
                     css`
                         background: none;
                         border: none;
+                        font-size: 16px;
                     `,
+                    'TextInput',
                     this.props.className
                 )}
                 value={this.props.value || ''}
