@@ -46,6 +46,14 @@ class Demo extends Component {
                 </pre>
             </Box>
             <Paragraph>
+                With placeholder
+            </Paragraph>
+            <Box>
+                <TextInput
+                    placeholder={'With placeholder'}
+                />
+            </Box>
+            <Paragraph>
                 Small size
             </Paragraph>
             <Box>

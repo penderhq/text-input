@@ -5,11 +5,13 @@ import { css, cx } from 'emotion'
 export default class TextInput extends React.Component {
 
     static propTypes = {
-        id: PropTypes.string.isRequired,
+        id: PropTypes.string,
         className: PropTypes.string,
-        value: PropTypes.number,
-        onChange: PropTypes.func.isRequired,
+        value: PropTypes.string,
+        onChange: PropTypes.func,
         disabled: PropTypes.bool,
+        type: PropTypes.string,
+        placeholder: PropTypes.string,
         size: PropTypes.oneOf([
             'sm',
             'md'
@@ -18,16 +20,19 @@ export default class TextInput extends React.Component {
 
     static defaultProps = {
         disabled: false,
-        size: 'md'
+        size: 'md',
+        type: 'text'
     }
 
     render() {
 
-        const { size, disabled, value } = this.props
+        const { id, type, placeholder, size, disabled, value } = this.props
 
         return (
             <input
-                type="text"
+                id={id}
+                type={type}
+                placeholder={placeholder}
                 className={cx(
                     css`
                         background-color: #fff;
@@ -62,6 +67,10 @@ export default class TextInput extends React.Component {
     }
 
     handleChange = (e) => {
+
+        if (!this.props.onChange) {
+            return
+        }
 
         this.props.onChange({
             id: this.props.id,
