@@ -45,6 +45,36 @@ class Demo extends Component {
                     {JSON.stringify(this.state, null, 2)}
                 </pre>
             </Box>
+            <Paragraph>
+                Small size
+            </Paragraph>
+            <Box>
+                <TextInput
+                    value={this.state.value}
+                    size={'sm'}
+                    onChange={({value}) => {
+
+                        this.setState({
+                            value
+                        })
+                    }}
+                />
+            </Box>
+            <Paragraph>
+                Disabled
+            </Paragraph>
+            <Box>
+                <TextInput
+                    value={this.state.value}
+                    disabled={true}
+                    onChange={({value}) => {
+
+                        this.setState({
+                            value
+                        })
+                    }}
+                />
+            </Box>
         </Canvas>
     }
 }
