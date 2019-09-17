@@ -46,6 +46,7 @@ export default class TextInput extends React.Component {
                         padding: 5px 15px;
                         transition: border-color .15s ease-in-out;
                         width: 100%;
+                        -webkit-appearance: none;
                         &:focus {
                             -webkit-transition-duration: 0s;
                             border-color: #07f;

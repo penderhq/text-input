@@ -1,6 +1,6 @@
 {
   "name": "@pndr/text-input",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Used for entering a single line of text.",
   "main": "lib/index.js",
   "module": "es/index.js",
