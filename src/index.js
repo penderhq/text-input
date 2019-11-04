@@ -36,8 +36,9 @@ export default class TextInput extends React.Component {
                 className={cx(
                     css`
                         background-color: #fff;
-                        border: 1px solid #d9d9d9;
-                        border-radius: 3px;
+                        border: none;
+                        border-radius: 6px;
+                        box-shadow: 0 0 0 1px rgba(0,0,0,.09), 0 1px 0 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.1);
                         color: #191919;
                         display: block;
                         font-size: 16px;
@@ -49,7 +50,7 @@ export default class TextInput extends React.Component {
                         -webkit-appearance: none;
                         &:focus {
                             -webkit-transition-duration: 0s;
-                            border-color: #07f;
+                            box-shadow: inset 0 0 0 2px #0022fd, 0 2px 4px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.1);
                             outline: 0;
                             transition-duration: 0s;
                         }
